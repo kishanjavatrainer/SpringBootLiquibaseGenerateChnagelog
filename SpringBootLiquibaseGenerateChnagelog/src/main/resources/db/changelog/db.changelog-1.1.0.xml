@@ -1,0 +1,18 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="SudhaVerma (generated)" id="1503546670092-1">
+        <createTable tableName="person_table">
+            <column autoIncrement="true" name="person_id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="email" type="VARCHAR(255)"/>
+            <column name="person_name" type="VARCHAR(255)"/>
+            <column name="salary" type="DOUBLE"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="SudhaVerma (generated)" id="1503546670092-2">
+        <createIndex indexName="EMAIL_INDEX" tableName="person_table">
+            <column name="email"/>
+        </createIndex>
+    </changeSet>
+</databaseChangeLog>

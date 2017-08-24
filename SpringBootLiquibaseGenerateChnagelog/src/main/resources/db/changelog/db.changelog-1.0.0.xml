@@ -1,0 +1,35 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+	
+	<changeSet author="Kishank (generated)" id="1503460396396-1">
+		<createTable tableName="employee_table">
+			<column autoIncrement="true" name="employee_id" type="INT">
+				<constraints primaryKey="true" />
+			</column>
+			<column name="email" type="VARCHAR(255)" />
+			<column name="employee_name" type="VARCHAR(255)" />
+			<column name="salary" type="DOUBLE" />
+		</createTable>
+	</changeSet>
+	
+	<changeSet author="Kishank (generated)" id="1503460396396-2">
+		<createIndex indexName="EMAIL_INDEX" tableName="employee_table">
+			<column name="email" />
+		</createIndex>
+	</changeSet>
+	
+	<changeSet id="1503460396396-3" author="Kishank (generated)">
+		<insert tableName="employee_table">
+			<column name="employee_name" value="Rocky"></column>
+			<column name="email" value="rock.s@yahoo.com"></column>
+			<column name="salary" valueNumeric="80000.00"></column>
+		</insert>
+		<insert tableName="employee_table">
+			<column name="employee_name" value="Martin"></column>
+			<column name="email" value="martin.s@yahoo.com"></column>
+			<column name="salary" valueNumeric="70000.00"></column>
+		</insert>
+	</changeSet>
+</databaseChangeLog>
